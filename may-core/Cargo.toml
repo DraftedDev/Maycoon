@@ -1,0 +1,19 @@
+[package]
+name = "may-core"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+winit = "0.28.7"
+softbuffer = "0.3.1"
+rayon = "1.8.0"
+skia-safe = { version = "0.67.0" }
+taffy = "0.3.16"
+
+[features]
+default = ["widgets"]
+widgets = ["skia-safe/textlayout"]
+x11 = ["skia-safe/x11", "softbuffer/x11"]
+wayland = ["skia-safe/wayland", "softbuffer/wayland"]

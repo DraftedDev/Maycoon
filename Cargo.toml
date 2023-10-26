@@ -1,0 +1,24 @@
+[workspace]
+members = ["may-core"]
+
+[package]
+name = "maycoon"
+version = "0.1.0-alpha"
+edition = "2021"
+description = "Lightning fast and modular UI framework."
+readme = "README.md"
+license = "MIT OR Apache-2.0"
+resolver = "2"
+
+[dependencies]
+may-core = { path = "may-core" }
+
+[lib]
+name = "maycoon"
+path = "src/lib.rs"
+
+[[example]]
+name = "hello-world"
+path = "examples/hello-world.rs"
+harness = false
+required-features = ["may-core/widgets"]
